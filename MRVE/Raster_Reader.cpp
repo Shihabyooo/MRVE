@@ -12,38 +12,8 @@ RasterProcessor::~RasterProcessor()
 }
 
 
-
-////test
-//bool PFileIsExist(std::string location)
-//{
-//	std::cout << "Attempting to open " << location << std::endl;
-//	std::ifstream file_to_check;
-//
-//	file_to_check.open(location);
-//	if (file_to_check.is_open())
-//	{
-//		file_to_check.close();
-//		return true;
-//	}
-//	else
-//	{
-//		file_to_check.close();
-//		return false;
-//	}
-//}
-////endtest
-
-
 bool RasterProcessor::LoadRaster(std::string rasterPath)
 {
-	////test
-	//if (!PFileIsExist(rasterPath))
-	//{
-	//	std::cout << "Error! Could not open DEM file: " << rasterPath << ". \nFile doesn't exist?\n\n";
-	//	return false;
-	//}
-	////endtest
-
 	const char * demloc = rasterPath.c_str();
 	raster = (GDALDataset *)GDALOpen(demloc, GA_ReadOnly);
 
